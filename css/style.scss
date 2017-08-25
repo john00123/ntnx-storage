@@ -1,0 +1,97 @@
+//Comment for compiler
+@import '../../_ntnx/variables';
+@import '../../_ntnx/mixins';
+@import '../../_ntnx/old_variables';
+
+*{
+  -webkit-margin-before:0em;
+  -webkit-margin-after:0em;
+  margin:0;
+  padding: 0;
+}
+
+html{
+  @include font;
+  background-color: $background-color-4-old;
+  font:$h3-alt-old;
+}
+
+body{
+  @include flex(center, center, column);
+  @include size(100vh, 100%);
+}
+
+h5, h4{ font:$h3-alt-old;
+font-weight: 500;
+color:$font-color-2-old;
+}
+
+
+
+.widget{
+  @include size(285px, 299px);
+  @include transition(box-shadow);
+  background-color: $white;
+  border-radius: 4px;
+  border: 1px solid $border-color-2-old;
+  &:hover{
+    @include shadow;
+  }
+}
+
+.widget-header{
+  @include size(30px, 100%);
+  padding: 11px 15px;
+  border-bottom: 1px solid $border-color-3-old;
+
+}
+
+.widget-body{
+  @include size(255px, 100%);
+  @include flex(center, space-between,column);
+  overflow-y: hidden;
+
+}
+
+.view{
+  @include flex ('', space-between, row);
+  @include size(40px, 100%);
+  border-bottom: 1px solid $border-color-3-old;
+  padding:11px 15px;
+}
+
+.primary{
+  @include size(auto,100%)
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  h6, a{
+    padding:5px 0;
+    font: $h3-alt-old;
+
+  }
+
+  h1{
+  font:$h1-old;
+  padding: 10px 0;
+  font-weight: 600;
+  }
+
+  a{
+    @include link;
+    color:$blue-2-old;
+    font: $h3-alt-old;
+  }
+
+}
+
+.secondary, .terciary{
+  @include hover($blue-2-old, $semi-white-old);
+  align-items: center;
+}
+
+
+.terciary{
+border-radius: 0 0 4px 4px;
+}

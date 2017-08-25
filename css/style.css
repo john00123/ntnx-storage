@@ -1,0 +1,125 @@
+* {
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 300 14px/10px "nutanix_soft", san-serif;
+  text-rendering: optimizeSpeed;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F9F9FA;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h5, h4 {
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  font-weight: 500;
+  color: #6F787E;
+}
+
+.widget {
+  height: 285px;
+  width: 299px;
+  box-sizing: border-box;
+  transition: box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #DBDFE1;
+}
+
+.widget:hover {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.widget-header {
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 15px;
+  border-bottom: 1px solid #F3F4F5;
+}
+
+.widget-body {
+  height: 255px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.view {
+  display: flex;
+  align-items: "";
+  justify-content: space-between;
+  flex-direction: row;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid #F3F4F5;
+  padding: 11px 15px;
+}
+
+.primary {
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.primary h6, .primary a {
+  padding: 5px 0;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+}
+
+.primary h1 {
+  font: 200 24px/18px "nutanix_soft", san-serif;
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.primary a {
+  color: #22A5F7;
+  font: 300 14px/10px "nutanix_soft", san-serif;
+  text-decoration: none;
+  color: #26bbf0;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+}
+
+.primary a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.secondary, .terciary {
+  align-items: center;
+}
+
+.secondary:hover, .terciary:hover {
+  cursor: pointer;
+  color: #26bbf0;
+  background-color: #F9F9FA;
+}
+
+.terciary {
+  border-radius: 0 0 4px 4px;
+}
