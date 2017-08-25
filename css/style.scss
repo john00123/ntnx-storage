@@ -25,11 +25,10 @@ h5, h4{ font:$h3-alt-old;
 font-weight: 500;
 color:$font-color-2-old;
 }
-
-
+p{font-weight: 500;}
 
 .widget{
-  @include size(285px, 299px);
+  @include size(285px, 230px);
   @include transition(box-shadow);
   background-color: $white;
   border-radius: 4px;
@@ -42,58 +41,87 @@ color:$font-color-2-old;
 .widget-header{
   @include size(30px, 100%);
   padding: 11px 15px;
-  border-bottom: 1px solid $border-color-3-old;
-
+  border-bottom: 1px solid $border-color-2-old;
+  h5{font-weight: 600;}
 }
 
 .widget-body{
   @include size(255px, 100%);
-  @include flex(center, space-between,column);
+  @include flex(center, flex-start,column);
   overflow-y: hidden;
 
 }
 
-.view{
-  @include flex ('', space-between, row);
-  @include size(40px, 100%);
-  border-bottom: 1px solid $border-color-3-old;
-  padding:11px 15px;
-  transform: translateY(-2px);
+.icon-health{
+  transform: translatey(1px);
+  @include size(13px, 12px);
+  margin-right: 6px;
+  fill:$red-2-old;
 }
 
-.primary{
-  @include size(auto,100%)
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-grow: 1;
-  h6, a{
-    padding:5px 0;
-    font: $h3-alt-old;
-
+.icon-open-new-window{
+  transform: translatey(1px);
+  @include size(13px, 12px);
+  fill:$font-color-2-old;
+  margin-right: -3px;
+  &:hover{
+    fill:$blue-2-old;
   }
+}
 
-  h1{
-  font:$h1-old;
-  padding: 10px 0;
-  font-weight: 600;
-  }
-
-  a{
-    @include link;
-    color:$blue-2-old;
-    font: $h3-alt-old;
-  }
-
+.view{
+  @include flex ('', space-between, row);
+  @include size('', 100%);
+  border-bottom: 1px solid $border-color-3-old;
+  padding:16px 15px;
 }
 
 .secondary, .terciary{
-  @include hover($blue-2-old, $semi-white-old);
+  @include hover('', $semi-white-old );
   align-items: center;
+  color:$font-color-1-old;
+  & p:hover{
+    color:$blue-2-old;
+    text-decoration: underline;
+
+  }
 }
 
+.title{
+  width: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .terciary{
-border-radius: 0 0 4px 4px;
-border-color: transparent;
+}
+
+.value{
+  @include flex(center,'','');
+  p{
+    margin: 0;
+    padding-right: 8px;
+    &:last-child{
+      padding: 0;
+    }
+  }
+  color: $font-color-2-old;
+}
+
+kbd{
+  font-size: 20px;
+  line-height:4px;
+  padding-right:3px
+}
+
+.red{
+  color:$red-2-old;
+}
+.yellow{
+  color:$yellow-2-old;
+}
+
+.gray{
+  color:$dark-6-old;
 }
