@@ -3,97 +3,166 @@
 @import '../../_ntnx/mixins';
 @import '../../_ntnx/old_variables';
 
-*{
-  -webkit-margin-before:0em;
-  -webkit-margin-after:0em;
-  margin:0;
+// general css rules
+* {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  margin: 0;
   padding: 0;
 }
 
-html{
+html {
   @include font;
   background-color: $background-color-4-old;
-  font:$h3-alt-old;
+  font: $h3-alt-old;
 }
 
-body{
+body {
   @include flex(center, center, column);
   @include size(100vh, 100%);
 }
 
-h5, h4{ font:$h3-alt-old;
-font-weight: 500;
-color:$font-color-2-old;
-}
 
-
-
-.widget{
+// widget
+.widget {
   @include size(285px, 299px);
   @include transition(box-shadow);
   background-color: $white;
   border-radius: 4px;
   border: 1px solid $border-color-2-old;
-  &:hover{
+
+  &:hover {
     @include shadow;
   }
 }
 
-.widget-header{
+.widget-header {
   @include size(30px, 100%);
   padding: 11px 15px;
   border-bottom: 1px solid $border-color-3-old;
-
+  h5{
+    font:$h3-alt-old;
+  }
 }
 
-.widget-body{
+.widget-body {
   @include size(255px, 100%);
   @include flex(center, space-between,column);
   overflow-y: hidden;
-
 }
 
-.view{
-  @include flex ('', space-between, row);
+// shared widget styling
+.view {
+  @include flex( '', space-between, row);
   @include size(40px, 100%);
   border-bottom: 1px solid $border-color-3-old;
-  padding:11px 15px;
+  padding: 11px 15px;
   transform: translateY(-2px);
+  &:last-child{
+    border-radius: 0 0 4px 4px;
+    border-color: transparent;
+  }
+  &:not(.primary){
+    @include hover($font-color-1-old, $semi-white-old);
+    align-items: center;
+    color:$font-color-2-old;
+    &:hover .title{
+      text-decoration: underline;
+    }
+    &:hover .value{
+      color:initial;
+    }
+  }
 }
 
-.primary{
-  @include size(auto,100%)
-  justify-content: center;
+// first information pane overwrite
+.primary {
+  @include size(auto,100%) justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-grow: 1;
-  h6, a{
-    padding:5px 0;
+
+  a,
+  h6 {
+    padding: 5px 0;
     font: $h3-alt-old;
-
   }
 
-  h1{
-  font:$h1-old;
-  padding: 10px 0;
-  font-weight: 600;
+  h1 {
+    font: $h1-old;
+    padding: 10px 0;
+    font-weight: 600;
   }
 
-  a{
+  a {
     @include link;
-    color:$blue-2-old;
+    color: $blue-2-old;
     font: $h3-alt-old;
   }
+}
+//popup styling
 
+.popup-background {
+  @include absolute();
+  @include size(100%,100%);
+  @include flex(center, center, column);
+  background-color: rgba(52, 53, 54, 0.60);
 }
 
-.secondary, .terciary{
-  @include hover($blue-2-old, $semi-white-old);
-  align-items: center;
+.popup{
+  @include size(auto,500px);
+  @include shadow;
 }
 
+.popup-header  {
+  @include size(50px, 100%);
+  @include flex(center, space-between ,row);
+  background-color: $background-color-1-old;
+  padding: 11px 20px;
+  font: $h3-alt-old;
+  color: $font-color-4-old;
+  border-radius: 4px 4px 0 0 ;
 
-.terciary{
-border-radius: 0 0 4px 4px;
-border-color: transparent;
+  //close button
+  span{
+    @include size(16px, 16px);
+    position: relative;
+    &::before, &::after{
+      content: '';
+      @include absolute(0,9px,'');
+      @include size(16px,2px);
+      border-radius: 2px;
+      background-color: $font-color-4-old;
+    }
+    &::before{
+      transform: rotate(-45deg);
+    }
+    &::after{
+    transform: rotate(45deg);
+    }
+  }
+}
+
+// popup main
+.popup-body {
+  @include size(400px, 100%)
+  background-color: $white-old;
+  padding: 20px;
+}
+
+// main graph
+.main-graph{
+  @include flex (flex-start, space-between, row);
+  @include size(100px, 100%);
+  background-color: lavender;
+}
+
+.graph{
+  @include size(30px, 100%);
+  background-color: red;
+  flex-grow: 1;
+  .compress { background-color: yellow; }
+  .dedup { background-color: yellow; }
+  .erasure { background-color: yellow; }
+  .free { background-color: yellow; }
 }
