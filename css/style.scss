@@ -170,6 +170,8 @@ body {
   @include size(30px, 100%);
   background-color: $background-color-3-old;
   flex-grow: 1;
+  &:not(:last-child){ border-right: 1px solid $border-color-1-old};
+
 
   &:first-child{
     border-radius: 3px 0 0 3px;
@@ -196,8 +198,11 @@ body {
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   }
  }
-.dedup { background-color: yellow; }
-.erasure { background-color: yellow; }
+.dedup {
+  @extend .compress;
+background-position: 3.9px 0;}
+.erasure { @extend .compress;
+background-position: 2.2px 0; }
 .free { background-color: white; }
 
 @keyframes motionb-bg {
