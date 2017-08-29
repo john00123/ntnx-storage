@@ -217,6 +217,11 @@ body {
   color: #6F787E;
 }
 
+.popup-body span {
+  float: right;
+  text-align: right;
+}
+
 .main-graph {
   display: flex;
   align-items: flex-start;
@@ -230,7 +235,7 @@ body {
 }
 
 .graph {
-  height: 30px;
+  height: 20px;
   width: 100%;
   box-sizing: border-box;
   background-color: #F3F4F5;

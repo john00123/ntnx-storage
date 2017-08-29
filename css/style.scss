@@ -156,6 +156,10 @@ body {
     padding-bottom: 15px;
     color:$font-color-2-old;
   }
+  span{
+    float: right;
+    text-align: right;
+  }
 }
 
 // main graph
@@ -167,7 +171,7 @@ body {
 }
 
 .graph{
-  @include size(30px, 100%);
+  @include size(20px, 100%);
   background-color: $background-color-3-old;
   flex-grow: 1;
   &:not(:last-child){ border-right: 1px solid $border-color-1-old};
