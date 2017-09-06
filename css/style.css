@@ -1,3 +1,4 @@
+@import url("http://meyerweb.com/eric/tools/css/reset/reset.css");
 * {
   -webkit-margin-before: 0;
   -webkit-margin-after: 0;
@@ -166,7 +167,8 @@ body {
   flex-direction: row;
   background-color: #343536;
   padding: 11px 20px;
-  font: 400 12px/8px "nutanix_soft", san-serif;
+  font-size: 14px;
+  font-weight: 600;
   color: #9AA5B5;
   border-radius: 4px 4px 0 0;
 }
@@ -178,7 +180,7 @@ body {
   position: relative;
 }
 
-.popup-header span::before, .popup-header span::after {
+.popup-header span::after, .popup-header span::before {
   content: '';
   position: absolute;
   top: 0;
@@ -231,42 +233,40 @@ body {
   width: 100%;
   box-sizing: border-box;
   border-radius: 4px;
-  border: 1px solid #C4C9CD;
 }
 
 .graph {
   height: 20px;
   width: 100%;
   box-sizing: border-box;
-  background-color: #F3F4F5;
   flex-grow: 1;
+  border-radius: 0;
 }
 
 .graph:not(:last-child) {
-  border-right: 1px solid #C4C9CD;
+  margin-right: 2px;
 }
 
 .graph:first-child {
-  border-radius: 3px 0 0 3px;
+  background-color: #36D068;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 .graph:last-child {
-  border-radius: 0 3px 3px 0;
-}
-
-.graph:nth-last-child(2) {
-  border-right: 1px solid #C4C9CD;
+  background-color: #F3F4F5;
+  border-top-right-radius: 4px;
+  border-bottom-rght-radius: 4px;
 }
 
 .compress, .dedup, .erasure {
-  background-color: #dbfe1;
   transition: background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dbdfe1' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #F3F4F5;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#DBDFE1;opacity:0.5;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
 }
 
 .compress:hover, .dedup:hover, .erasure:hover {
-  background-color: white;
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dbdfe1' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-color: #F9F9FA;
   animation-name: motionb-bg;
   animation-duration: 100s;
   animation-iteration-count: infinite;
@@ -283,6 +283,57 @@ body {
 
 .free {
   background-color: white;
+}
+
+table {
+  margin-top: 20px;
+  height: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #D5DAE0;
+  border-radius: 4px;
+  border-collapse: separate;
+}
+
+td {
+  vertical-align: middle;
+  width: calc(100% - 1px);
+  border-bottom: 1px solid #F2F4F6;
+  padding: 11px 15px;
+  font: 300 12px/8px "nutanix_soft", san-serif;
+  font-weight: 400;
+}
+
+tr:first-child td:first-child {
+  text-indent: 0;
+}
+
+tr:first-child {
+  color: #9AA5B5;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+tr:first-child td {
+  font-size: 10px;
+  line-height: 8px;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+td kbd {
+  color: #36D068;
+  line-height: 8px;
+  padding-right: 8px;
+}
+
+td kbd:nth-child(2) {
+  color: #22A5F7;
+}
+
+tr:last-child td {
+  border-bottom: none;
 }
 
 @keyframes motionb-bg {

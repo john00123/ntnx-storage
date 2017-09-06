@@ -1,4 +1,5 @@
 //Comment for compiler
+@import url( 'http://meyerweb.com/eric/tools/css/reset/reset.css');
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
 @import '../../_ntnx/old_variables';
@@ -22,7 +23,6 @@ body {
   @include size(100vh, 100%);
 }
 
-
 // widget
 .widget {
   @include size(285px, 299px);
@@ -40,8 +40,9 @@ body {
   @include size(30px, 100%);
   padding: 11px 15px;
   border-bottom: 1px solid $border-color-3-old;
-  h5{
-    font:$h3-alt-old;
+
+  h5 {
+    font: $h3-alt-old;
   }
 }
 
@@ -58,23 +59,26 @@ body {
   border-bottom: 1px solid $border-color-3-old;
   padding: 11px 15px;
   transform: translateY(-2px);
-  &:last-child{
+
+  &:last-child {
     border-radius: 0 0 4px 4px;
     border-color: transparent;
   }
-  &:not(.primary){
+
+  &:not(.primary) {
     @include hover($font-color-1-old, $semi-white-old);
     align-items: center;
-    color:$font-color-2-old;
-    &:hover .title{
+    color: $font-color-2-old;
+
+    &:hover .title {
       text-decoration: underline;
     }
-    &:hover .value{
-      color:initial;
+
+    &:hover .value {
+      color: initial;
     }
   }
 }
-
 // first information pane overwrite
 .primary {
   @include size(auto,100%) justify-content: center;
@@ -109,111 +113,176 @@ body {
   background-color: rgba(52, 53, 54, 0.60);
 }
 
-.popup{
+.popup {
   @include size(auto,500px);
   @include shadow;
 }
 
-.popup-header  {
+.popup-header {
   @include size(50px, 100%);
   @include flex(center, space-between ,row);
   background-color: $background-color-1-old;
   padding: 11px 20px;
-  font: $h3-alt-old;
+  font-size: 14px;
+  font-weight: 600;
   color: $font-color-4-old;
-  border-radius: 4px 4px 0 0 ;
-
+  border-radius: 4px 4px 0 0;
   //close button
-  span{
+  span {
     @include size(16px, 16px);
     position: relative;
-    &::before, &::after{
+
+    &::after,
+    &::before {
       content: '';
       @include absolute(0,9px,'');
       @include size(16px,2px);
       border-radius: 2px;
       background-color: $font-color-4-old;
     }
-    &::before{
+
+    &::before {
       transform: rotate(-45deg);
     }
-    &::after{
-    transform: rotate(45deg);
+
+    &::after {
+      transform: rotate(45deg);
     }
   }
 }
-
 // popup main
 .popup-body {
-  @include size(400px, 100%)
-  background-color: $white-old;
+  @include size(400px, 100%) background-color: $white-old;
   padding: 20px;
-  h3{
+
+  h3 {
     font: $h3-old;
     padding-bottom: 8px;
   }
-  p{
+
+  p {
     padding-bottom: 15px;
-    color:$font-color-2-old;
+    color: $font-color-2-old;
   }
-  span{
+
+  span {
     float: right;
     text-align: right;
   }
 }
-
 // main graph
-.main-graph{
+.main-graph {
   @include flex (flex-start, space-between, row);
   @include size(auto, 100%);
   border-radius: 4px;
-  border: 1px solid $border-color-1-old;
+  // border: 1px solid $border-color-1-old;
 }
 
-.graph{
+.graph {
   @include size(20px, 100%);
-  background-color: $background-color-3-old;
   flex-grow: 1;
-  &:not(:last-child){ border-right: 1px solid $border-color-1-old};
+  border-radius: 0;
 
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
 
-  &:first-child{
-    border-radius: 3px 0 0 3px;
+  &:first-child {
+    background-color: $green-1;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
-  &:last-child{
-    border-radius: 0 3px 3px 0;
-  }
-  &:nth-last-child(2){
-    border-right: 1px solid $border-color-1-old;
+
+  &:last-child {
+    background-color: $background-color-3-old;
+    border-top-right-radius: 4px;
+    border-bottom-rght-radius: 4px;
   }
 }
+
 .compress {
-  background-color: #dbfe1;
   @include transition(background-color);
+  // width: 60px;
+  background-color: $background-color-3-old;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#DBDFE1;opacity:0.5;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
 
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dbdfe1' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-
-  &:hover{
-    background-color: white;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dbdfe1' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  &:hover {
+    background-color: $background-color-4-old;
     animation-name: motionb-bg;
     animation-duration: 100s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   }
- }
+}
+
 .dedup {
   @extend .compress;
-background-position: 3.9px 0;}
-.erasure { @extend .compress;
-background-position: 2.2px 0; }
-.free { background-color: white; }
+  background-position: 3.9px 0;
+}
 
+.erasure {
+  @extend .compress;
+  background-position: 2.2px 0;
+}
+
+.free {
+  background-color: white;
+}
+//table
+table {
+  margin-top: 20px;
+  @include size(30px, 100%);
+  border: 1px solid $border-color-2;
+  border-radius: 4px;
+  border-collapse: separate;
+}
+
+td {
+  vertical-align: middle;
+  width: calc(100% - 1px);
+  border-bottom: 1px solid $border-color-3;
+  padding: 11px 15px;
+  font: $p-alt-old;
+  font-weight: 400;
+}
+
+tr:first-child td:first-child {
+  text-indent: 0;
+}
+
+tr:first-child {
+  color: $font-color-4-old;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+tr:first-child td {
+  font-size: 10px;
+  line-height: 8px;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+
+td kbd {
+  color: $green-1;
+  line-height: 8px;
+  padding-right: 8px;
+
+  &:nth-child(2) {
+    color: $blue-1;
+  }
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
 @keyframes motionb-bg {
-  0%{
+  0% {
     background-position: 0 0;
   }
-  100%{
+
+  100% {
     background-position: 300px 0;
   }
 }
