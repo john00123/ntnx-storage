@@ -1,11 +1,4 @@
 @import url("http://meyerweb.com/eric/tools/css/reset/reset.css");
-* {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   font: 300 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
@@ -20,10 +13,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .widget {
@@ -34,6 +28,7 @@ body {
   background-color: #FFFFFF;
   border-radius: 4px;
   border: 1px solid #DBDFE1;
+  margin: 10px;
 }
 
 .widget:hover {
@@ -152,7 +147,7 @@ body {
 
 .popup {
   height: auto;
-  width: 500px;
+  width: 400px;
   box-sizing: border-box;
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
 }
@@ -180,6 +175,10 @@ body {
   position: relative;
 }
 
+.popup-header span:hover {
+  cursor: pointer;
+}
+
 .popup-header span::after, .popup-header span::before {
   content: '';
   position: absolute;
@@ -191,6 +190,7 @@ body {
   box-sizing: border-box;
   border-radius: 2px;
   background-color: #9AA5B5;
+  transition: background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .popup-header span::before {
@@ -201,8 +201,42 @@ body {
   transform: rotate(45deg);
 }
 
+.popup-header span:hover::before, .popup-header span:hover::after {
+  background-color: white;
+}
+
+.popup-footer {
+  height: 60px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: "";
+  background-color: #F3F4F5;
+  border-radius: 0 0 4px 4px;
+  padding: 18px;
+  border-top: 1px solid #DBDFE1;
+}
+
+.popup-footer button {
+  border: 1px solid #C4C9CD;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #6F787E;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  font-weight: 500;
+}
+
+.popup-footer button:hover {
+  color: #3F4142;
+  cursor: pointer;
+}
+
 .popup-body {
-  height: 400px;
+  height: auto;
   width: 100%;
   box-sizing: border-box;
   background-color: #FFFFFF;
@@ -248,7 +282,7 @@ body {
 }
 
 .graph:first-child {
-  background-color: #36D068;
+  background-color: #5f96e3;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
@@ -260,12 +294,15 @@ body {
 }
 
 .compress, .dedup, .erasure {
-  transition: background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid transparent;
+  width: 60px;
   background-color: #F3F4F5;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#DBDFE1;opacity:0.5;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
 }
 
-.compress:hover, .dedup:hover, .erasure:hover {
+.hover {
+  border: 1px solid #C4C9CD;
   background-color: #F9F9FA;
   animation-name: motionb-bg;
   animation-duration: 100s;
@@ -279,10 +316,6 @@ body {
 
 .erasure {
   background-position: 2.2px 0;
-}
-
-.free {
-  background-color: white;
 }
 
 table {
@@ -334,6 +367,11 @@ td kbd:nth-child(2) {
 
 tr:last-child td {
   border-bottom: none;
+}
+
+tr:not(:first-child):hover {
+  background-color: #F9F9FA;
+  cursor: pointer;
 }
 
 @keyframes motionb-bg {

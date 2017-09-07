@@ -5,13 +5,6 @@
 @import '../../_ntnx/old_variables';
 
 // general css rules
-* {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   @include font;
   background-color: $background-color-4-old;
@@ -19,8 +12,9 @@ html {
 }
 
 body {
-  @include flex(center, center, column);
+  @include flex(center, center, row);
   @include size(100vh, 100%);
+  flex-wrap: wrap;
 }
 
 // widget
@@ -30,10 +24,10 @@ body {
   background-color: $white;
   border-radius: 4px;
   border: 1px solid $border-color-2-old;
-
   &:hover {
     @include shadow;
   }
+  margin: 10px;
 }
 
 .widget-header {
@@ -53,6 +47,7 @@ body {
 }
 
 // shared widget styling
+
 .view {
   @include flex( '', space-between, row);
   @include size(40px, 100%);
@@ -79,7 +74,9 @@ body {
     }
   }
 }
+
 // first information pane overwrite
+
 .primary {
   @include size(auto,100%) justify-content: center;
   align-items: center;
@@ -104,6 +101,7 @@ body {
     font: $h3-alt-old;
   }
 }
+
 //popup styling
 
 .popup-background {
@@ -114,45 +112,30 @@ body {
 }
 
 .popup {
-  @include size(auto,500px);
+  @include size(auto,400px);
   @include shadow;
 }
 
 .popup-header {
-  @include size(50px, 100%);
-  @include flex(center, space-between ,row);
-  background-color: $background-color-1-old;
-  padding: 11px 20px;
-  font-size: 14px;
-  font-weight: 600;
-  color: $font-color-4-old;
-  border-radius: 4px 4px 0 0;
-  //close button
-  span {
-    @include size(16px, 16px);
-    position: relative;
+  @include popup-header-old;
+}
 
-    &::after,
-    &::before {
-      content: '';
-      @include absolute(0,9px,'');
-      @include size(16px,2px);
-      border-radius: 2px;
-      background-color: $font-color-4-old;
-    }
-
-    &::before {
-      transform: rotate(-45deg);
-    }
-
-    &::after {
-      transform: rotate(45deg);
-    }
+.popup-footer{
+  @include size(60px, 100%);
+  @include flex(center, flex-end, '');
+  background-color: $background-color-3-old;
+  border-radius: 0 0 4px 4px;
+  padding:18px;
+  border-top: 1px solid $border-color-2-old;
+  button{
+  @include secondary-old;
+  font-weight: 500;
   }
 }
 // popup main
+
 .popup-body {
-  @include size(400px, 100%) background-color: $white-old;
+  @include size(auto, 100%) background-color: $white-old;
   padding: 20px;
 
   h3 {
@@ -170,7 +153,9 @@ body {
     text-align: right;
   }
 }
+
 // main graph
+
 .main-graph {
   @include flex (flex-start, space-between, row);
   @include size(auto, 100%);
@@ -188,7 +173,7 @@ body {
   }
 
   &:first-child {
-    background-color: $green-1;
+    background-color: $cobalt-1-old;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
@@ -201,18 +186,20 @@ body {
 }
 
 .compress {
-  @include transition(background-color);
-  // width: 60px;
+  @include transition(all);
+  border:1px solid transparent;
+  width: 60px;
   background-color: $background-color-3-old;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#DBDFE1;opacity:0.5;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
+}
 
-  &:hover {
-    background-color: $background-color-4-old;
-    animation-name: motionb-bg;
-    animation-duration: 100s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
+.hover {
+  border: 1px solid $border-color-1-old;
+  background-color: $background-color-4-old;
+  animation-name: motionb-bg;
+  animation-duration: 100s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .dedup {
@@ -225,10 +212,8 @@ body {
   background-position: 2.2px 0;
 }
 
-.free {
-  background-color: white;
-}
 //table
+
 table {
   margin-top: 20px;
   @include size(30px, 100%);
@@ -277,6 +262,15 @@ td kbd {
 tr:last-child td {
   border-bottom: none;
 }
+
+
+tr:not(:first-child){
+  &:hover{
+  background-color: $background-color-4-old;
+  cursor: pointer;
+  }
+}
+
 @keyframes motionb-bg {
   0% {
     background-position: 0 0;
