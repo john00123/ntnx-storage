@@ -174,7 +174,7 @@ body {
   }
 
   &:first-child {
-    background-color: $cobalt-1-old;
+    background-color: $blue-2-old;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
   }
@@ -182,27 +182,24 @@ body {
   &:last-child {
     background-color: $background-color-3-old;
     border-top-right-radius: 4px;
-    border-bottom-rght-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
 }
 
 .compress {
-  @include transition(all);
-  border:1px solid transparent;
-  width: 60px;
-  background-color: $background-color-3-old;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#DBDFE1;opacity:0.9;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
+  @include transition(background-color);
+  width: 100px;
+  background-color: $border-color-2-old;
+  animation: graph-size 1.8s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hover {
-  border: 1px solid $border-color-1-old;
-  background-color: $background-color-4-old;
-  animation-name: motionb-bg;
-  animation-duration: 100s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: $blue-3-old;
+  cursor: pointer;
 }
-
+.used{
+  flex-shrink: 1;
+}
 .dedup {
   @extend .compress;
   background-position: 3.9px 0;
@@ -210,7 +207,13 @@ body {
 
 .erasure {
   @extend .compress;
+  width: 200px;
   background-position: 2.2px 0;
+}
+
+.free{
+  width: 150px;
+  flex-shrink: 0;
 }
 
 //table
@@ -264,20 +267,29 @@ tr:last-child td {
   border-bottom: none;
 }
 
-
-tr:not(:first-child){
-  &:hover{
-  background-color: $background-color-4-old;
-  cursor: pointer;
-  }
+td:last-child{
+  text-align: right;
 }
 
-@keyframes motionb-bg {
+.cellHover{
+background-color: $background-color-4-old;
+cursor: pointer;
+}
+
+@keyframes graph-size {
+
   0% {
-    background-position: 0 0;
+    margin-right: 0;
+    width: 0;
+  }
+
+  30% {
+    margin-right: 0;
+    width: 0;
   }
 
   100% {
-    background-position: 300px 0;
+    margin-right: 2px;
+    width: inherit;
   }
 }

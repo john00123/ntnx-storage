@@ -23,6 +23,7 @@ var table = {
     class:   '.erasure'
   }
 }
+
 const pop = function(){
   $('.popup-background').toggle();
 };
@@ -30,8 +31,8 @@ const pop = function(){
 $(document).ready(pop);
 
 function newTableRow(){
-  for( var i=0; i<Object.keys(table).length; i++){
-    var objKey = Object.keys(table)[i];
+  for(var i=0; i<Object.keys(table).length; i++){
+    const objKey = Object.keys(table)[i];
     $('.values').append(
       `<tr>
            ${table[objKey].method}
@@ -43,13 +44,16 @@ function newTableRow(){
 }
 
 function cellHighlight(){
-  for(i=1; i<Object.keys(table).length; i++){
-    var objKey = Object.keys(table)[i];
-    $("tr:eq("+i+")").hover(function(){
-       $(table[objKey].class).addClass('hover');
+  for(let i=1; i<Object.keys(table).length; i++){
+    let objKey = Object.keys(table)[i];
+
+    $("tr:eq("+i+")," + table[objKey].class + "").hover(function(){
+       $(table[objKey].class).addClass('hover'),
+       $("tr:eq("+i+")").addClass('cellHover');
      },
      function(){
        $(table[objKey].class).removeClass('hover');
+       $("tr:eq("+i+")").removeClass('cellHover');
       }
     );
   }
