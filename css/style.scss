@@ -50,7 +50,7 @@ body {
         content:'';
         position: absolute;
         top:25px;
-        right:-5%;
+        right:-6%;
         height: 2px;
         width: 110%;
         background-color: $blue-2-old;
@@ -102,7 +102,8 @@ body {
   }
 
   p {
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    line-height: 18px;
     color: $font-color-2-old;
   }
 
@@ -115,7 +116,7 @@ body {
 
 .deck{
   @include flex(center,flex-start,row);
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 input[type=radio] + label {
@@ -124,14 +125,15 @@ input[type=radio] + label {
 }
 
 .table-cloth{
-  margin-top: 15px;
+  margin-top: 18px;
   border: 1px solid $border-color-2-old;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   display: block;
 }
 .details{
   border:none;
   width: 100%;
+
   td,th{
     padding: 11px 20px;
     text-align: left;
@@ -139,9 +141,11 @@ input[type=radio] + label {
       text-align: right;
     }
   }
+
   thead{
     border-bottom: 1px solid $border-color-3-old;
   }
+
   th{
     font-size: 10px;
     font-weight: 500;
@@ -150,53 +154,28 @@ input[type=radio] + label {
       border-right:1px solid $border-color-3-old;
     }
   }
-}
-
-
-.card{
- @include secondary-old;
- display: block;
- width:150px;
- border-color: $border-color-2-old;
- &:nth-child(2){
-   margin: 0 15px;
- }
- h3{
-   color:$font-color-1-old;
-   padding-bottom: 10px;
-   font-size: 14px;
-   margin-top: 10px;
- }
- span{
-   color: $font-color-1;
- }
- p{
-   padding-top: 15px;
-   &:not(:last-child){
-   border-bottom: 1px solid $border-color-3-old;
-   }
-   &:last-child{
-     margin-bottom: 10px;
-   }
+  tr{
+    &:not(:last-child){
+    border-bottom: 1px solid $border-color-3-old;
+    }
   }
 }
-.card-footer{
-  background-color: $background-color-3-old;
-  width: 100%;
-  padding: 11px 15px;
-  margin: -1px -15px -11px -15px;
-  border-top: 1px solid $border-color-2-old;
-  border-radius: 0 0 3px 3px;
-  @include flex(center, center, '');
-  .primary{
-    @include primary-old;
-    margin-left: 0px;
-    font-weight: 500;
-    width: 100%;
-    min-width:65px;
-  }
-  h3{
-    font-size: 12px;
-    font-weight: 500;
+
+.inputShow{
+  text-align: right;
+  float: right;
+}
+.price{
+  // margin-top: 15px;
+  margin-top: -1px;
+
+  @include secondary-old;
+  border-color:$border-color-2-old;
+  border-radius: 0 0 4px 4px;
+  padding: 11px 20px;
+  background-color: $background-color-4-old;
+  p{
+    color:$font-color-1-old;
+    padding-bottom: 0;
   }
 }
