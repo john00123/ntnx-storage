@@ -14,9 +14,18 @@
         <div class="popup-body">
           <h3>Choose license<span>Available CCU: 2000 <code>(365 days left)</code></span></h3>
           <div class="deck">
-            <input type="radio" name="starter">Starter</input>
-            <input type="radio" name="Pro">Pro</input>
-            <input type="radio" name="Ultimate">Ultimate</input>
+            <input type="radio" id="license1"
+             name="license" value="Starter">
+            <label for="license1">Starter</label>
+
+            <input type="radio" id="license2"
+             name="license" value="Pro">
+            <label for="license2">Pro</label>
+
+            <input type="radio" id="license3"
+             name="license" value="Ultimate">
+            <label for="license3">Ultimate</label>
+
 
             <!-- <div class="card">
               <h3> Starter </h3>
@@ -38,7 +47,37 @@
             </div> -->
 
           </div>
+          <div class='table-cloth'>
+            <table class="details">
+            <thead>
+              <th>NUMBER</th>
+              <th>TYPE</th>
+              <th>CCU PER UNIT</th>
+              <th>TOTAL CCU</th>
+            </thead>
+            <tbody class='table-body'>
+              <!-- <tr>
+                <td>3</td>
+                <td>Sockets</td>
+                <td>1000</td>
+                <td>3000</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Sockets</td>
+                <td>1000</td>
+                <td>3000</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Sockets</td>
+                <td>1000</td>
+                <td>3000</td>
+              </tr> -->
 
+            </tbody>
+          </table>
+        </div>
         </div>
 
         <div class="popup-footer">

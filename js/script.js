@@ -4,12 +4,12 @@ var steps = {
             </div>`,
   subheader : {
     one : '<h3>1. Cluster info</h3>',
-    two : '<h3>2. Licenses</h3>',
+    two : '<h3>2. sdsdsd</h3>',
     three : '<h3>3. Add-on & Review</h3>',
     html: `<div class="popup-subheader"></div>`
-  }
+  },
+  starter : '<tr><td>hi</td>M</tr>'
 };
-var keys = Object.keys(steps);
 
 const pop = function(){
   $('.popup-background').toggle();

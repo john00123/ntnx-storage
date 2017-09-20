@@ -27,7 +27,7 @@ body {
 }
 
 .popup {
-  @include size(auto,600px);
+  @include size(auto,500px);
   @include shadow;
 }
 
@@ -114,9 +114,45 @@ body {
 //cards
 
 .deck{
-  @include flex(center,center,row);
+  @include flex(center,flex-start,row);
   margin-top: 5px;
 }
+
+input[type=radio] + label {
+  padding-right: 15px;
+  margin-left: 5px;
+}
+
+.table-cloth{
+  margin-top: 15px;
+  border: 1px solid $border-color-2-old;
+  border-radius: 4px;
+  display: block;
+}
+.details{
+  border:none;
+  width: 100%;
+  td,th{
+    padding: 11px 20px;
+    text-align: left;
+    &:last-child{
+      text-align: right;
+    }
+  }
+  thead{
+    border-bottom: 1px solid $border-color-3-old;
+  }
+  th{
+    font-size: 10px;
+    font-weight: 500;
+    color:$font-color-2-old;
+    &:not(last-child){
+      border-right:1px solid $border-color-3-old;
+    }
+  }
+}
+
+
 .card{
  @include secondary-old;
  display: block;
