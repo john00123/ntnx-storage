@@ -160,7 +160,7 @@ body {
 .main-graph {
   @include flex (flex-start, space-between, row);
   @include size(auto, 100%);
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .graph {
@@ -174,14 +174,14 @@ body {
 
   &:first-child {
     background-color: $blue-2-old;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
   }
 
   &:last-child {
     background-color: $background-color-3-old;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
 }
 
