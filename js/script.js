@@ -11,7 +11,7 @@ var steps = {
 };
 
 var licenseData = {
-  thead:['NUMBER','TYPE','CCU PER UNIT', 'TOTAL CCU'],
+  thead:['NUM','TYPE','CCU PER UNIT', 'TOTAL CCU'],
   number:[3, 4, 5],
   type: ['Sockets','Hard Drive','Solid State Drive'],
   ccper:{
@@ -24,6 +24,7 @@ var licenseData = {
 
 //popup structure
 $(document).ready(function(){
+  $('.input-change').toggle();
   $('.popup').prepend(steps.header);
   $('.popup-header').after(steps.subheader.html);
   $('.popup-subheader').append(
@@ -53,8 +54,8 @@ function tableGen(tier){
     );
   sum += tier[i]*licenseData.number[i];
   }
-  
-  $('.price').html(`<p>Total <span>${sum} CCU</span></p>`);
+
+  $('.price').html(`<p>Total <span>${sum}</span></p>`);
 }
 
 function checker(){
@@ -71,6 +72,28 @@ function checker(){
     tableGen(tier);
   }
 };
+
+$('.inputShow').click(function(){
+  $('.input-change').toggle();
+  $('td').toggleClass('opacity');
+});
+
+$('#sockets').val(licenseData.number[0]);
+$('#HDD').val(licenseData.number[1]);
+$('#SSD').val(licenseData.number[2]);
+
+
+$('.save').click(function(){
+  licenseData.number[0] = $('#sockets').val();
+  licenseData.number[1] = $('#HDD').val();
+  licenseData.number[2] = $('#SSD').val();
+  $('.input-change').toggle();
+  checker();
+});
+
+
+
+
 
 $('#license1').not(':checked').click().change(checker);
 $('#license2').not(':checked').click().change(checker);

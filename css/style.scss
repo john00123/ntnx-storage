@@ -18,6 +18,13 @@ body {
   overflow: hidden;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 //popup styling
 .popup-background {
   @include absolute();
@@ -105,6 +112,9 @@ body {
     padding-bottom: 20px;
     line-height: 18px;
     color: $font-color-2-old;
+    code{
+      color:$font-color-1-old;
+    }
   }
 
   span {
@@ -116,12 +126,12 @@ body {
 
 .deck{
   @include flex(center,flex-start,row);
-  margin-top: 10px;
 }
 
 input[type=radio] + label {
   padding-right: 15px;
   margin-left: 5px;
+  color:$font-color-1-old;
 }
 
 .table-cloth{
@@ -140,6 +150,9 @@ input[type=radio] + label {
     &:last-child{
       text-align: right;
     }
+  }
+  td{
+    color:$font-color-1-old;
   }
 
   thead{
@@ -160,10 +173,24 @@ input[type=radio] + label {
     }
   }
 }
+.pusher{
+display: flex;
+flex-grow: 1;
+}
 
+.link{
+  position: relative;
+}
 .inputShow{
+  display: flex;
+  width: auto;
   text-align: right;
-  float: right;
+  justify-content: flex-end;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  &:hover{
+    cursor: pointer;
+  }
 }
 .price{
   // margin-top: 15px;
@@ -172,10 +199,97 @@ input[type=radio] + label {
   @include secondary-old;
   border-color:$border-color-2-old;
   border-radius: 0 0 4px 4px;
-  padding: 11px 20px;
+  padding: 9px 20px;
   background-color: $background-color-4-old;
   p{
     color:$font-color-1-old;
+    font-weight: 500;
     padding-bottom: 0;
   }
+}
+
+.input-change{
+  @include shadow;
+  padding: 15px;
+  background-color: white;
+  border:1px solid $border-color-2-old;
+  border-radius: 3px;
+  position: absolute;
+  top:25px;
+  right: -40px;
+  z-index: 1;
+  h3{
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  label{
+    font: $h4-old;
+    text-transform: uppercase;
+    font-weight: 500;
+    color:$font-color-3-old;
+    padding-bottom: 5px;
+  }
+  &::before{
+    content: '';
+    display: block;
+    height: 8px;
+    border-radius: 1.5px;
+    transform: rotate(45deg);
+    width: 8px;
+    position: absolute;
+    top:-4px;
+    left: 82px;
+    background-color: white;
+    box-shadow: inset 1px 1px 0px 0px $border-color-2-old;
+    z-index: 0;
+  }
+  .primary{
+    position: relative;
+    margin-top: 20px;
+    @include primary-old;
+    font-weight: 500;
+    padding:11px 17px;
+    margin-left: 5px;
+    margin-bottom: -2px;
+    width: 135px;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 172px;
+      height: 1px;
+      background-color: $border-color-3-old;
+      top: -15px;
+      left: -21px;
+      display: block;
+    }
+  }
+
+  .secondary{
+      margin-top: 20px;
+    @include secondary-old;
+    font-weight: 500;
+    padding: 11px 13px;
+    margin-right: 2px;
+    margin-bottom: -5px;
+  }
+
+  input{
+    border:1px solid $border-color-2-old;
+    padding: 8px 4px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font:$h3-alt-old;
+    text-align: center;
+    &:focus{
+      border-color: $blue-2-old;
+    }
+  }
+}
+
+.opacity{
+  will-change: opacity;
+  opacity: 0.3;
+  @include transition(all);
 }

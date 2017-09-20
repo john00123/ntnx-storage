@@ -21,6 +21,13 @@ body {
   overflow: hidden;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 .popup-background {
   position: absolute;
   top: 0;
@@ -204,6 +211,10 @@ body {
   color: #6F787E;
 }
 
+.popup-body p code {
+  color: #3F4142;
+}
+
 .popup-body span {
   float: right;
   text-align: right;
@@ -214,12 +225,12 @@ body {
   align-items: center;
   justify-content: flex-start;
   flex-direction: row;
-  margin-top: 10px;
 }
 
 input[type=radio] + label {
   padding-right: 15px;
   margin-left: 5px;
+  color: #3F4142;
 }
 
 .table-cloth {
@@ -243,6 +254,10 @@ input[type=radio] + label {
   text-align: right;
 }
 
+.details td {
+  color: #3F4142;
+}
+
 .details thead {
   border-bottom: 1px solid #F3F4F5;
 }
@@ -261,9 +276,26 @@ input[type=radio] + label {
   border-bottom: 1px solid #F3F4F5;
 }
 
+.pusher {
+  display: flex;
+  flex-grow: 1;
+}
+
+.link {
+  position: relative;
+}
+
 .inputShow {
+  display: flex;
+  width: auto;
   text-align: right;
-  float: right;
+  justify-content: flex-end;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+}
+
+.inputShow:hover {
+  cursor: pointer;
 }
 
 .price {
@@ -277,7 +309,7 @@ input[type=radio] + label {
   background-color: #FFFFFF;
   border-color: #DBDFE1;
   border-radius: 0 0 4px 4px;
-  padding: 11px 20px;
+  padding: 9px 20px;
   background-color: #F9F9FA;
 }
 
@@ -288,5 +320,119 @@ input[type=radio] + label {
 
 .price p {
   color: #3F4142;
+  font-weight: 500;
   padding-bottom: 0;
+}
+
+.input-change {
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #DBDFE1;
+  border-radius: 3px;
+  position: absolute;
+  top: 25px;
+  right: -40px;
+  z-index: 1;
+}
+
+.input-change h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input-change label {
+  font: 400 10px/7px "nutanix_soft", san-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #7C8D9F;
+  padding-bottom: 5px;
+}
+
+.input-change::before {
+  content: '';
+  display: block;
+  height: 8px;
+  border-radius: 1.5px;
+  transform: rotate(45deg);
+  width: 8px;
+  position: absolute;
+  top: -4px;
+  left: 82px;
+  background-color: white;
+  box-shadow: inset 1px 1px 0px 0px #DBDFE1;
+  z-index: 0;
+}
+
+.input-change .primary {
+  position: relative;
+  margin-top: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #FFFFFF;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #26bbf0;
+  font-weight: 500;
+  padding: 11px 17px;
+  margin-left: 5px;
+  margin-bottom: -2px;
+  width: 135px;
+}
+
+.input-change .primary:hover {
+  background-color: #7ad5f9;
+  cursor: pointer;
+}
+
+.input-change .primary::after {
+  content: '';
+  position: absolute;
+  width: 172px;
+  height: 1px;
+  background-color: #F3F4F5;
+  top: -15px;
+  left: -21px;
+  display: block;
+}
+
+.input-change .secondary {
+  margin-top: 20px;
+  border: 1px solid #C4C9CD;
+  border-radius: 4px;
+  padding: 11px 15px;
+  color: #6F787E;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  text-decoration: none;
+  background-color: #FFFFFF;
+  font-weight: 500;
+  padding: 11px 13px;
+  margin-right: 2px;
+  margin-bottom: -5px;
+}
+
+.input-change .secondary:hover {
+  color: #3F4142;
+  cursor: pointer;
+}
+
+.input-change input {
+  border: 1px solid #DBDFE1;
+  padding: 8px 4px;
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font: 400 12px/8px "nutanix_soft", san-serif;
+  text-align: center;
+}
+
+.input-change input:focus {
+  border-color: #26bbf0;
+}
+
+.opacity {
+  will-change: opacity;
+  opacity: 0.3;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
