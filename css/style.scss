@@ -84,6 +84,14 @@ button:focus {
     font-weight: 500;
     min-width:65px;
   }
+
+  p{
+  display: inline-flex;
+  justify-content: flex-start;
+  color:$font-color-2-old;
+  text-align: left;
+  flex-grow: 1;
+  }
 }
 // popup main
 
@@ -98,7 +106,7 @@ button:focus {
   h3 {
     font: $h3-old;
     font-weight: 600;
-    padding-bottom: 8px;
+    padding-bottom: 15px;
     span{
       font-weight: 400;
     }

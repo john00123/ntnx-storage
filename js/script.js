@@ -18,7 +18,8 @@ var licenseData = {
     starter:[2100,4000,4500],
     pro:[2700,4800,6000],
     ultimate:[3000,6000,6900]
-  }
+  },
+  funds:60000
 }
 
 
@@ -56,6 +57,10 @@ function tableGen(tier){
   }
 
   $('.price').html(`<p>Total <span>${sum}</span></p>`);
+
+  if(licenseData.funds < sum){
+    $('.price span').css('color','#cc6164');
+  }
 }
 
 function checker(){
@@ -91,7 +96,7 @@ $('.save').click(function(){
   checker();
 });
 
-
+$('.popup-footer').prepend(licenseData.funds);
 
 
 

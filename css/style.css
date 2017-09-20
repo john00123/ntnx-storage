@@ -178,6 +178,14 @@ button:focus {
   cursor: pointer;
 }
 
+.popup-footer p {
+  display: inline-flex;
+  justify-content: flex-start;
+  color: #6F787E;
+  text-align: left;
+  flex-grow: 1;
+}
+
 .popup-body {
   height: auto;
   width: 100%;
@@ -193,7 +201,7 @@ button:focus {
 .popup-body h3 {
   font: 500 12px/8px "nutanix_soft", san-serif;
   font-weight: 600;
-  padding-bottom: 8px;
+  padding-bottom: 15px;
 }
 
 .popup-body h3 span {
