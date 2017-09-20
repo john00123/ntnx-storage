@@ -11,7 +11,7 @@ var steps = {
 };
 
 var licenseData = {
-  thead:['NUM','TYPE','CCU PER UNIT', 'TOTAL CCU'],
+  thead:['QTY','TYPE','CCU PER UNIT', 'TOTAL CCU'],
   number:[3, 4, 5],
   type: ['Sockets','Hard Drive','Solid State Drive'],
   ccper:{

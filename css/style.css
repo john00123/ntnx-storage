@@ -331,8 +331,8 @@ input[type=radio] + label {
   border: 1px solid #DBDFE1;
   border-radius: 3px;
   position: absolute;
-  top: 25px;
-  right: -40px;
+  top: -50px;
+  left: 130px;
   z-index: 1;
 }
 
@@ -357,10 +357,10 @@ input[type=radio] + label {
   transform: rotate(45deg);
   width: 8px;
   position: absolute;
-  top: -4px;
-  left: 82px;
+  top: 50px;
+  left: -4px;
   background-color: white;
-  box-shadow: inset 1px 1px 0px 0px #DBDFE1;
+  box-shadow: inset 1px -1px 0px 0px #DBDFE1;
   z-index: 0;
 }
 

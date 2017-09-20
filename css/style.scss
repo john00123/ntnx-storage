@@ -215,8 +215,8 @@ flex-grow: 1;
   border:1px solid $border-color-2-old;
   border-radius: 3px;
   position: absolute;
-  top:25px;
-  right: -40px;
+  top:-50px;
+  left: 130px;
   z-index: 1;
   h3{
     text-align: center;
@@ -238,10 +238,10 @@ flex-grow: 1;
     transform: rotate(45deg);
     width: 8px;
     position: absolute;
-    top:-4px;
-    left: 82px;
+    top:50px;
+    left: -4px;
     background-color: white;
-    box-shadow: inset 1px 1px 0px 0px $border-color-2-old;
+    box-shadow: inset 1px -1px 0px 0px $border-color-2-old;
     z-index: 0;
   }
   .primary{
