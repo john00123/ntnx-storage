@@ -18,93 +18,7 @@ body {
   overflow: hidden;
 }
 
-// widget
-.widget {
-  @include size(285px, 299px);
-  @include transition(box-shadow);
-  background-color: $white;
-  border-radius: 4px;
-  border: 1px solid $border-color-2-old;
-  &:hover {
-    @include shadow;
-  }
-  margin: 10px;
-}
-
-.widget-header {
-  @include size(30px, 100%);
-  padding: 11px 15px;
-  border-bottom: 1px solid $border-color-3-old;
-
-  h5 {
-    font: $h3-alt-old;
-  }
-}
-
-.widget-body {
-  @include size(255px, 100%);
-  @include flex(center, space-between,column);
-  overflow-y: hidden;
-}
-
-// shared widget styling
-
-.view {
-  @include flex( '', space-between, row);
-  @include size(40px, 100%);
-  border-bottom: 1px solid $border-color-3-old;
-  padding: 11px 15px;
-  transform: translateY(-2px);
-
-  &:last-child {
-    border-radius: 0 0 4px 4px;
-    border-color: transparent;
-  }
-
-  &:not(.primary) {
-    @include hover($font-color-1-old, $semi-white-old);
-    align-items: center;
-    color: $font-color-2-old;
-
-    &:hover .title {
-      text-decoration: underline;
-    }
-
-    &:hover .value {
-      color: initial;
-    }
-  }
-}
-
-// first information pane overwrite
-
-.primary {
-  @include size(auto,100%) justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  flex-grow: 1;
-
-  a,
-  h6 {
-    padding: 5px 0;
-    font: $h3-alt-old;
-  }
-
-  h1 {
-    font: $h1-old;
-    padding: 10px 0;
-    font-weight: 600;
-  }
-
-  a {
-    @include link;
-    color: $blue-2-old;
-    font: $h3-alt-old;
-  }
-}
-
 //popup styling
-
 .popup-background {
   @include absolute();
   @include size(100%,100%);
@@ -113,13 +27,38 @@ body {
 }
 
 .popup {
-  @include size(auto,400px);
+  @include size(auto,600px);
   @include shadow;
 }
 
 .popup-header {
   @include popup-header-old;
 }
+
+.popup-subheader{
+  @include flex(center,'','');
+  height: 40px;
+  border-bottom: 1px solid $border-color-2-old;
+  padding: 0 20px;
+  background-color: white;
+  h3{
+    position: relative;
+    margin-right: 30px;
+    font-weight: 500;
+    &:nth-child(2){
+      &:after{
+        content:'';
+        position: absolute;
+        top:25px;
+        right:-5%;
+        height: 2px;
+        width: 110%;
+        background-color: $blue-2-old;
+      }
+    }
+}
+}
+
 
 .popup-footer{
   @include size(60px, 100%);
@@ -128,9 +67,15 @@ body {
   border-radius: 0 0 4px 4px;
   padding:18px;
   border-top: 1px solid $border-color-2-old;
-  button{
+  .secondary{
   @include secondary-old;
   font-weight: 500;
+  }
+  .primary{
+    @include primary-old;
+    margin-left: 10px;
+    font-weight: 500;
+    min-width:65px;
   }
 }
 // popup main
@@ -139,9 +84,21 @@ body {
   @include size(auto, 100%) background-color: $white-old;
   padding: 20px;
 
+  a{
+    color:$blue-2-old;
+  }
+
   h3 {
     font: $h3-old;
+    font-weight: 600;
     padding-bottom: 8px;
+    span{
+      font-weight: 400;
+    }
+    code{
+      color:$font-color-2-old;
+      margin-left: 5px;
+    }
   }
 
   p {
@@ -154,142 +111,56 @@ body {
     text-align: right;
   }
 }
+//cards
 
-// main graph
-
-.main-graph {
-  @include flex (flex-start, space-between, row);
-  @include size(auto, 100%);
-  border-radius: 3px;
+.deck{
+  @include flex(center,center,row);
+  margin-top: 5px;
 }
-
-.graph {
-  @include size(20px, 100%);
-  flex-grow: 1;
-  border-radius: 0;
-
-  &:not(:last-child) {
-    margin-right: 2px;
+.card{
+ @include secondary-old;
+ display: block;
+ width:150px;
+ border-color: $border-color-2-old;
+ &:nth-child(2){
+   margin: 0 15px;
+ }
+ h3{
+   color:$font-color-1-old;
+   padding-bottom: 10px;
+   font-size: 14px;
+   margin-top: 10px;
+ }
+ span{
+   color: $font-color-1;
+ }
+ p{
+   padding-top: 15px;
+   &:not(:last-child){
+   border-bottom: 1px solid $border-color-3-old;
+   }
+   &:last-child{
+     margin-bottom: 10px;
+   }
   }
-
-  &:first-child {
-    background-color: $blue-2-old;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-  }
-
-  &:last-child {
-    background-color: $background-color-3-old;
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
 }
-
-.compress {
-  @include transition(background-color);
-  width: 100px;
-  background-color: $dark-8-old;
-  animation: graph-size 1.8s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#ffffff;opacity:0.5;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
-}
-
-.hover {
-  background-color: $dark-7-old;
-  cursor: pointer;
-}
-.used{
-  flex-shrink: 1;
-}
-.dedup {
-  @extend .compress;
-  background-position: 3.9px 0;
-}
-
-.erasure {
-  @extend .compress;
-  width: 200px;
-  background-position: 2.2px 0;
-}
-
-.free{
-  width: 150px;
-  flex-shrink: 0;
-}
-
-//table
-
-table {
-  margin-top: 20px;
-  @include size(30px, 100%);
-  border: 1px solid $border-color-2;
-  border-radius: 4px;
-  border-collapse: separate;
-}
-
-td {
-  vertical-align: middle;
-  width: calc(100% - 1px);
-  border-bottom: 1px solid $border-color-3;
+.card-footer{
+  background-color: $background-color-3-old;
+  width: 100%;
   padding: 11px 15px;
-  font: $p-alt-old;
-  font-weight: 400;
-}
-
-tr:first-child td:first-child {
-  text-indent: 0;
-}
-
-tr:first-child {
-  color: $font-color-4-old;
-  text-transform: uppercase;
-  font-size: 10px;
-  font-weight: 500;
-}
-
-tr:first-child td {
-  font-size: 10px;
-  line-height: 8px;
-  font-weight: 500;
-  padding: 10px 15px;
-}
-
-td kbd {
-  color: $green-1;
-  line-height: 8px;
-  padding-right: 8px;
-
-  &:nth-child(2) {
-    color: $blue-1;
+  margin: -1px -15px -11px -15px;
+  border-top: 1px solid $border-color-2-old;
+  border-radius: 0 0 3px 3px;
+  @include flex(center, center, '');
+  .primary{
+    @include primary-old;
+    margin-left: 0px;
+    font-weight: 500;
+    width: 100%;
+    min-width:65px;
   }
-}
-
-tr:last-child td {
-  border-bottom: none;
-}
-
-td:last-child{
-  text-align: right;
-}
-
-.cellHover{
-background-color: $background-color-4-old;
-cursor: pointer;
-}
-
-@keyframes graph-size {
-
-  0% {
-    margin-right: 0;
-    width: 0;
-  }
-
-  30% {
-    margin-right: 0;
-    width: 0;
-  }
-
-  100% {
-    margin-right: 2px;
-    width: inherit;
+  h3{
+    font-size: 12px;
+    font-weight: 500;
   }
 }

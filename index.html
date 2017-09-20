@@ -9,61 +9,45 @@
   <title>Storage Widget</title>
 </head>
 <body>
-
-  <div class="widget">
-    <!-- header -->
-    <div class="widget-header">
-      <h5> Storage optimization </h5>
-    </div>
-
-    <!-- body -->
-    <div class="widget-body">
-      <div class="view primary">
-        <h1> 3.15 : 1 </h1>
-        <h6> Data Reduction </h6>
-        <!-- <a> See breakdown </a> -->
-      </div>
-
-      <div class="view secondary">
-        <p class="section title"> Data Reduction Savings </p>
-        <p class="value">300 GB</p>
-      </div>
-
-      <div class="view terciary">
-        <p class="section title">Overall Efficiency</p>
-        <p class="value">3 : 1</p>
-      </div>
-    </div>
-
-    <div class="popup-background">
-      <div class="popup">
-        <div class="popup-header">
-          <h3 class="header title">
-            Data Reduction Savings
-          </h3>
-          <span></span>
-        </div>
+  <div class="popup-background">
+    <div class="popup">
         <div class="popup-body">
-          <h3>Not ontime</h3>
-          <p> 896.16 GB available of 998.98GB<span>Total Savings 40.90 GB</span></p>
-          <div class="main-graph">
-            <div class="graph used"></div>
-            <div class="graph compress"></div>
-            <div class="graph dedup"></div>
-            <div class="graph erasure"></div>
-            <div class="graph free"></div>
+          <h3>Choose license<span>Available CCU: 2000 <code>(365 days left)</code></span></h3>
+          <div class="deck">
+            <input type="radio" name="starter">Starter</input>
+            <input type="radio" name="Pro">Pro</input>
+            <input type="radio" name="Ultimate">Ultimate</input>
+
+            <!-- <div class="card">
+              <h3> Starter </h3>
+              <p> Per socket <span> $500</span></p>
+              <p> Per HHD <span> $400</span></p>
+              <p> Per SSD <span> $800</span></p>
+            </div>
+            <div class="card">
+              <h3> Pro </h3>
+              <p> Per socket <span> $1000</span></p>
+              <p> Per HHD <span> $500</span></p>
+              <p> Per SSD <span> $900</span></p>
+            </div>
+            <div class="card">
+              <h3> Ultimate </h3>
+              <p> Per socket <span> $2000</span></p>
+              <p> Per HHD <span> $600</span></p>
+              <p> Per SSD <span> $1000</span></p>
+            </div> -->
+
           </div>
 
-          <table class="values"></table>
+        </div>
 
-        </div>
         <div class="popup-footer">
-          <button class='close'> Close </button>
+          <button class='secondary'> Cancel </button>
+          <button class='primary'> Next </button>
         </div>
-    </div>
     </div>
   </div>
-  <div class="widget"></div><div class="widget"></div><div class="widget"></div>
+
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
