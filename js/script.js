@@ -15,9 +15,9 @@ var licenseData = {
   number:[3, 4, 5],
   type: ['Sockets','Hard Drive','Solid State Drive'],
   ccper:{
-    starter:[2100,4000,4500],
-    pro:[2700,4800,6000],
-    ultimate:[3000,6000,6900]
+    starter:[15700,2455,228],
+    pro:[19468,3044,283],
+    ultimate:[21352,3338,310]
   },
   funds:60000
 }
