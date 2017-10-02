@@ -7,19 +7,19 @@ var table = {
   compression: {
     method:  '<td>Compression</td>',
     ratio:   '<td>1.5 : 1</td>',
-    savings: '<td>202.03 TB</td>',
+    savings: '<td>80.20 GB</td>',
     class:   '.compress'
   },
   dedup: {
     method:  '<td>Deduplication</td>',
     ratio:   '<td>1.9 : 1</td>',
-    savings: '<td>504.60 GB</td>',
+    savings: '<td>80.00 GB</td>',
     class:   '.dedup'
   },
   erasure: {
     method:  '<td>Erasure Coding</td>',
     ratio:   '<td>1.2 : 1</td>',
-    savings: '<td>903.73 GB</td>',
+    savings: '<td>170.10 GB</td>',
     class:   '.erasure'
   }
 }
@@ -28,7 +28,7 @@ const pop = function(){
   $('.popup-background').toggle();
 };
 
-$(document).ready(pop);
+pop
 
 function newTableRow(){
   for(var i=0; i<Object.keys(table).length; i++){
@@ -60,6 +60,19 @@ function cellHighlight(){
 }
 $('.close, .popup-header span').click(pop);
 $('.secondary').click(pop);
+
+$('.total').hover(rataIn, rataOut);
+
+function rataIn(){
+  $('.compress, .dedup, .erasure').addClass('hover');
+
+  $('.total').addClass('cellHover');
+}
+
+function rataOut(){
+    $('.compress, .dedup, .erasure').removeClass('hover');
+    $('.total').removeClass('cellHover');
+}
 
 newTableRow();
 cellHighlight();

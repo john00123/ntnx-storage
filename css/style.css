@@ -1,6 +1,6 @@
 @import url("http://meyerweb.com/eric/tools/css/reset/reset.css");
 html {
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
@@ -120,7 +120,7 @@ body {
 
 .primary a {
   color: #22A5F7;
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   color: #26bbf0;
   font: 400 12px/8px "nutanix_soft", san-serif;
@@ -283,7 +283,7 @@ body {
 }
 
 .graph:first-child {
-  background-color: #26bbf0;
+  background-color: #c2d5a0;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
