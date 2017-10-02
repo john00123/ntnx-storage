@@ -28,7 +28,10 @@ const pop = function(){
   $('.popup-background').toggle();
 };
 
-pop
+function initPop(){
+  $('.popup-background').toggle();
+};
+
 
 function newTableRow(){
   for(var i=0; i<Object.keys(table).length; i++){
@@ -74,5 +77,6 @@ function rataOut(){
     $('.total').removeClass('cellHover');
 }
 
+initPop();
 newTableRow();
 cellHighlight();
