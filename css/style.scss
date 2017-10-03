@@ -190,13 +190,13 @@ body {
 .compress {
   @include transition(background-color);
   width: 100px;
-  background-color: $dark-8-old;
+  background-color: $dark-9-old;
   animation: graph-size 1.8s forwards cubic-bezier(0.165, 0.84, 0.44, 1);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#ffffff;opacity:0.5;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'><g style='fill:#ffffff;opacity:0.4;'><polygon points='4 0 6 0 0 6 0 4'/><polygon points='6 4 6 6 4 6'/></g></svg>");
 }
 
 .hover {
-  background-color: $dark-7-old;
+  background-color: $dark-8-old;
   cursor: pointer;
 }
 .used{
