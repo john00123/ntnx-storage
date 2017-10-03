@@ -13,9 +13,10 @@ html {
 
 body {
   @include flex(center, center, row);
-  @include size(100vh, 100%);
+  @include size(100vh, 1280px);
   flex-wrap: wrap;
   overflow: hidden;
+  margin: auto;
 }
 
 // widget
@@ -263,6 +264,26 @@ td{font-weight: 400;}
     // background-color: $background-color-4-old;
   }
 }
+
+
+.others{
+  @include flex(flex-start, center, column);
+  @include size(350px, auto);
+  margin-right: 10px;
+  .other-container{
+    @include size(170px, 600px);
+    border-radius: 4px;
+    &:first-of-type{
+      margin-bottom: 20px;
+    }
+
+      background-color: $border-color-2-old;
+      opacity: .3;
+      display: block;
+  }
+}
+
+
 // @keyframes graph-size {
 //
 //   0% {

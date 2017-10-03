@@ -15,10 +15,11 @@ body {
   justify-content: center;
   flex-direction: row;
   height: 100vh;
-  width: 100%;
+  width: 1280px;
   box-sizing: border-box;
   flex-wrap: wrap;
   overflow: hidden;
+  margin: auto;
 }
 
 .widget {
@@ -292,4 +293,29 @@ td:last-child {
 
 .total td {
   font-weight: 400;
+}
+
+.others {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 350px;
+  width: auto;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.others .other-container {
+  height: 170px;
+  width: 600px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #DBDFE1;
+  opacity: .3;
+  display: block;
+}
+
+.others .other-container:first-of-type {
+  margin-bottom: 20px;
 }
