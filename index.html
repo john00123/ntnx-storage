@@ -19,19 +19,22 @@
     <!-- body -->
     <div class="widget-body">
       <div class="view primary">
-        <h1> 3.15 : 1 </h1>
-        <h6> Data Reduction </h6>
+        <p> 270.16 GB used of 998.98 GB</p>
+        <div class="main-graph">
+          <div class="graph used"></div>
+          <div class="graph compress"></div>
+          <div class="graph dedup"></div>
+          <div class="graph erasure"></div>
+          <div class="graph free"></div>
+        </div>
+
+        <table class="values"></table>
+        <table class="total">
+          <tr style='display:none'><td></td></tr><tr><td> Total Savings</td><td>330.90 GB</td></tr></table>
+
+      </div>
+
         <!-- <a> See breakdown </a> -->
-      </div>
-
-      <div class="view secondary">
-        <p class="section title"> Data Reduction Savings </p>
-        <p class="value">330 GB</p>
-      </div>
-
-      <div class="view terciary">
-        <p class="section title">Overall Efficiency</p>
-        <p class="value">3 : 1</p>
       </div>
     </div>
 
@@ -39,33 +42,19 @@
       <div class="popup">
         <div class="popup-header">
           <h3 class="header title">
-            Data Reduction Savings
+            Overall Effiency
           </h3>
           <span></span>
         </div>
         <div class="popup-body">
-          <h3>Not ontime</h3>
-          <p> 270.16 GB used of 998.98 GB</p>
-          <div class="main-graph">
-            <div class="graph used"></div>
-            <div class="graph compress"></div>
-            <div class="graph dedup"></div>
-            <div class="graph erasure"></div>
-            <div class="graph free"></div>
-          </div>
 
-          <table class="values"></table>
-          <table class="total">
-            <tr style='display:none'><td></td></tr><tr><td> Total Savings</td><td>330.90 GB</td></tr></table>
-
-        </div>
         <div class="popup-footer">
           <button class='close'> Close </button>
         </div>
     </div>
     </div>
   </div>
-  <div class="widget"></div><div class="widget"></div><div class="widget"></div>
+
   <!-- scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 

@@ -5,19 +5,19 @@ var table = {
     savings: '<td>SAVINGS</td>'
   },
   compression: {
-    method:  '<td>Compression</td>',
+    method:  '<td>Data Reduction</td>',
     ratio:   '<td>1.5 : 1</td>',
     savings: '<td>80.20 GB</td>',
     class:   '.compress'
   },
   dedup: {
-    method:  '<td>Deduplication</td>',
+    method:  '<td>Cloning</td>',
     ratio:   '<td>1.9 : 1</td>',
     savings: '<td>80.00 GB</td>',
     class:   '.dedup'
   },
   erasure: {
-    method:  '<td>Erasure Coding</td>',
+    method:  '<td>Thin Provisioning</td>',
     ratio:   '<td>1.2 : 1</td>',
     savings: '<td>170.10 GB</td>',
     class:   '.erasure'
@@ -62,7 +62,7 @@ function cellHighlight(){
   }
 }
 $('.close, .popup-header span').click(pop);
-$('.secondary').click(pop);
+$('.terciary').click(pop);
 
 $('.total').hover(rataIn, rataOut);
 

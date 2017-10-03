@@ -20,7 +20,7 @@ body {
 
 // widget
 .widget {
-  @include size(285px, 299px);
+  @include size(350px, 299px);
   @include transition(box-shadow);
   background-color: $white;
   border-radius: 4px;
@@ -42,9 +42,9 @@ body {
 }
 
 .widget-body {
-  @include size(255px, 100%);
+  @include size(auto, 100%);
   @include flex(center, space-between,column);
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 // shared widget styling
@@ -55,6 +55,7 @@ body {
   border-bottom: 1px solid $border-color-3-old;
   padding: 11px 15px;
   transform: translateY(-2px);
+  overflow-x: hidden;
 
   &:last-child {
     border-radius: 0 0 4px 4px;
@@ -76,13 +77,30 @@ body {
   }
 }
 
+.values{
+  border-radius: 4px 4px 0 0;
+  width: 115%;
+  margin-left: -20px;
+  margin-top: 28px;
+  border-color: $border-color-3-old;
+}
+.total{
+  margin-top: -1px;
+  width: 115%;
+  margin-left: -20px;
+  border-radius: 0 0 4px 4px;
+  border-bottom: none;
+  border-color: $border-color-3-old;
+}
+
 // first information pane overwrite
 
 .primary {
-  @include size(auto,100%) justify-content: center;
-  align-items: center;
+  @include size(auto,100%) justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
   flex-grow: 1;
+  margin: 18px  0 30px 0;
 
   a,
   h6 {
@@ -101,6 +119,13 @@ body {
     color: $blue-2-old;
     font: $h3-alt-old;
   }
+  p{
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+.graph{
+  margin-bottom: 15px;
 }
 
 //popup styling
@@ -220,7 +245,7 @@ body {
 
 table {
   margin-top: 20px;
-  @include size(30px, 100%);
+  @include size(40px, 100%);
   border: 1px solid $border-color-2;
   border-radius: 4px;
   border-collapse: separate;
@@ -230,9 +255,10 @@ td {
   vertical-align: middle;
   width: calc(100% - 1px);
   border-bottom: 1px solid $border-color-3;
-  padding: 11px 15px;
+  padding: 15px 15px;
   font: $p-alt-old;
   font-weight: 400;
+
 }
 
 tr:first-child td:first-child {
