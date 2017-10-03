@@ -13,7 +13,9 @@ html {
 
 body {
   @include flex(center, center, row);
-  @include size(100vh, 100%);
+  @include size(auto, 1280px);
+  padding-top: 80px;
+  margin: auto;
   flex-wrap: wrap;
   overflow: hidden;
 }
