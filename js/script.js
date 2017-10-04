@@ -46,6 +46,19 @@ function newTableRow(){
   }
 }
 
+function newTableRow(){
+  for(var i=0; i<Object.keys(table).length; i++){
+    const objKey = Object.keys(table)[i];
+    $('.values').append(
+      `<tr>
+           ${table[objKey].method}
+           ${table[objKey].ratio}
+           ${table[objKey].savings}
+      </tr>`
+    );
+  }
+}
+
 function cellHighlight(){
   for(let i=1; i<Object.keys(table).length; i++){
     let objKey = Object.keys(table)[i];
