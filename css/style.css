@@ -6,7 +6,7 @@
 }
 
 html {
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
@@ -100,7 +100,7 @@ h5, h4 {
 
 .primary a {
   color: #22A5F7;
-  font: 300 14px/10px "nutanix_soft", san-serif;
+  font: 400 14px/10px "nutanix_soft", san-serif;
   text-decoration: none;
   color: #26bbf0;
   font: 400 12px/8px "nutanix_soft", san-serif;
